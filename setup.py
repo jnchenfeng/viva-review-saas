@@ -5,31 +5,25 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="sentry-feishu",
+    name="viva-review-saas",
     version='0.0.1',
     author='feng.chen',
-    author_email='jnchenfeng123@163.com',
-    url='https://github.com/jnchenfeng/vivavideo-review-saas',
-    description='A Sentry extension which send errors stats to DingDing',
+    author_email='feng.chen@quvideo.com',
+    url='https://github.com/jnchenfeng/viva-review-saas',
+    description='viva review saas sdk',
     long_description=long_description,
     long_description_content_type="text/markdown",
     license='MIT',
-    keywords='sentry feishu',
+    keywords='viva review',
     include_package_data=True,
     zip_safe=False,
-    package_dir={'': 'src'},
-    packages=find_packages('src'),
+    package_dir={'': 'review_saas'},
+    packages=find_packages('review_saas'),
     install_requires=[
-        'sentry>=9.0.0',
         'requests',
     ],
-    entry_points={
-        'sentry.plugins': [
-            'sentry_feishu = sentry_feishu.plugin:FeiShuPlugin'
-        ]
-    },
     classifiers=[
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
         "License :: OSI Approved :: MIT License",
     ]
 )

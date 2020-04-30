@@ -52,20 +52,3 @@ class ImgReview:
                                timeout=3)
         res = result.json()
         return utils.check_api_result(res)
-
-
-if __name__ == '__main__':
-    ss = ImgReview('Ep4I64pF', '1b764f3b-50a5-514f-8d39-b033a90792b0')
-    img_list = ["http://qa-img.vd4v.com/20200415/4/730154803201519631332.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710753.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710754.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710755.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710756.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710757.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710758.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710759.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710760.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710761.jpg",
-                "https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/video-compose/20200415/1586952922698-1586952923698562538-1586952923767710762.jpg"]
-    ss.review(730154803, '565b36ce-7f15-11ea-9e87-0221860e9b7e', '28224847', img_list,
-              'https://vid-video-in-qa.s3.ap-south-1.amazonaws.com/20200415/3/730154803201519633579.mp4')

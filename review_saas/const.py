@@ -5,3 +5,5 @@
 # @Site    : 
 # @File    : const.py
 # @Software: PyCharm
+
+SERVICE_URL = "http://verify.quvideo.vip"
