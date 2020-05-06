@@ -10,36 +10,35 @@
 from review_saas import utils
 from review_saas.oauth_token import Token
 import requests
-from typing import List
 from review_saas.const import SERVICE_URL
 
 
-class ImgReview:
+class TextReview:
     def __init__(self, client_id: str, token: str):
         self.client_id = client_id
         self.token = token
         self.token_get = Token(client_id, token)
 
-    def review(self, video_id: int, secret_id: str, user_id: str, img_list: List, video_url: str = '', ):
+    def review(self, video_id: int, secret_id: str, user_id: str, text: str, video_url: str = '', ):
         """
-        图片审核
+        文本审核
         :param video_id:
         :param video_url:
         :param secret_id:
         :param user_id:
-        :param img_list:
+        :param text:
         :return:
         """
         if not video_id:
             raise Exception(msg='video_id 值不允许为空')
         if not secret_id:
             raise Exception(msg='secret_id 值不允许为空')
-        if not img_list:
-            raise Exception(msg='img_list 不允许为空')
+        if not text:
+            raise Exception(msg='text 不允许为空')
         if not user_id:
             raise Exception(msg='user_id 值不允许为空')
         video_id = str(video_id)
-        playload = {"dataId": video_id, "secretId": secret_id, "imgs": img_list,
+        playload = {"dataId": video_id, "secretId": secret_id, "imgs": text,
                     "userId": user_id}
         if video_url:
             playload["videoUrl"] = video_url
