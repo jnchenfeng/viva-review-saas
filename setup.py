@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="viva-review-saas",
-    version='0.0.2',
+    version='0.0.3',
     author='feng.chen',
     author_email='feng.chen@quvideo.com',
     url='https://github.com/jnchenfeng/viva-review-saas',

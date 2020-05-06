@@ -19,17 +19,16 @@ class TextReview:
         self.token = token
         self.token_get = Token(client_id, token)
 
-    def review(self, video_id: int, secret_id: str, user_id: str, text: str, video_url: str = '', ):
+    def review(self, text_id: int, secret_id: str, user_id: str, text: str, ):
         """
         文本审核
-        :param video_id:
-        :param video_url:
+        :param text_id:
         :param secret_id:
         :param user_id:
         :param text:
         :return:
         """
-        if not video_id:
+        if not text_id:
             raise Exception(msg='video_id 值不允许为空')
         if not secret_id:
             raise Exception(msg='secret_id 值不允许为空')
@@ -37,11 +36,9 @@ class TextReview:
             raise Exception(msg='text 不允许为空')
         if not user_id:
             raise Exception(msg='user_id 值不允许为空')
-        video_id = str(video_id)
-        playload = {"dataId": video_id, "secretId": secret_id, "imgs": text,
+        text_id = str(text_id)
+        playload = {"dataId": text_id, "secretId": secret_id, "text": text,
                     "userId": user_id}
-        if video_url:
-            playload["videoUrl"] = video_url
         playload_querystr = utils.deal_playload(playload)
         token = self.token_get.get_token()
         query_params = utils.get_query_params(playload_querystr, token, self.client_id)
