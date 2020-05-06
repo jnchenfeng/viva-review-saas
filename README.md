@@ -38,7 +38,7 @@ if not flag:
 from review_saas.text_review import TextReview
 
 img_review = TextReview(client_id,token)
-flag,msg = img_review.review(video_id: int, secret_id: str, user_id: str, text:str, video_url: str = '')
+flag,msg = img_review.review(text_id: int, secret_id: str, user_id: str, text:str)
 if not flag:
     print(msg)
 
