@@ -28,3 +28,18 @@ if not flag:
     print(msg)
 
 ```
+
+
+
+#### 文本审核
+
+```cython
+
+from review_saas.text_review import TextReview
+
+img_review = TextReview(client_id,token)
+flag,msg = img_review.review(video_id: int, secret_id: str, user_id: str, text:str, video_url: str = '')
+if not flag:
+    print(msg)
+
+```
